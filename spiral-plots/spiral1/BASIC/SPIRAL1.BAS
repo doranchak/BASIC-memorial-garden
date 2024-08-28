@@ -1,0 +1,16 @@
+10 SCREEN 9
+20 KEY OFF: CLS
+30 C = 0
+40 Z = 640 / 350
+50 R = 1
+60 T = 0
+70 X = R * COS(T) * Z + 320
+80 Y = R * SIN(T) + 175
+90 PSET (X, Y), C
+100 C = C + 1
+105 IF C = 16 THEN C = 0
+110 T = T + .1
+120 R = R * 1.001
+130 IF R < 200 THEN GOTO 70
+140 IF INKEY$ = "" GOTO 140
+
